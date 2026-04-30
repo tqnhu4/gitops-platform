@@ -36,7 +36,7 @@ spec:
 
       source:
         #repoURL: '{{repo}}'
-        repoURL: https://github.com/tqnhu4/argocd-gitops-platform
+        repoURL: https://github.com/tqnhu4/gitops-platform
         targetRevision: HEAD
         path: helm-charts/{{service}}
         helm:
