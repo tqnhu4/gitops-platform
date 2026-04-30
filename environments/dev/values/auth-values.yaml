@@ -1,4 +1,5 @@
 image:
   repository: nhutq/auth-service
-  #tag: latest
-  tag: ""
+  tag: latest
+  #tag: ""
+  pullPolicy: IfNotPresent
