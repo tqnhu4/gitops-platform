@@ -5,25 +5,25 @@ metadata:
   namespace: argocd
 spec:
   
-  generators:
-    - matrix:
-        generators:
-          - list:
-              elements:
+  #generators:
+  #  - matrix:
+  #      generators:
+  #        - list:
+  #            elements:
                 #- service: auth
                 #- service: product
                 #- service: order
 
-                - service: auth
-                  repo: https://github.com/tqnhu4/argocd-auth-service
+  #              - service: auth
+  #                repo: https://github.com/tqnhu4/argocd-auth-service
                 #- service: product
                 #  repo: https://github.com/tqnhu4/argocd-product-service
                 #- service: order
                 #  repo: https://github.com/tqnhu4/argocd-order-service                
 
-          - list:
-              elements:
-                - env: dev
+  #        - list:
+  #            elements:
+  #              - env: dev
                 #- env: staging
                 #- env: prod
 
@@ -35,7 +35,8 @@ spec:
       project: default
 
       source:
-        repoURL: '{{repo}}'
+        #repoURL: '{{repo}}'
+        repoURL: https://github.com/tqnhu4/argocd-gitops-platform
         targetRevision: HEAD
         path: helm-charts/{{service}}
         helm:
