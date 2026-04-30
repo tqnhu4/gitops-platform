@@ -1,0 +1,54 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: microservices
+  namespace: argocd
+spec:
+  
+  generators:
+    - matrix:
+        generators:
+          - list:
+              elements:
+                #- service: auth
+                #- service: product
+                #- service: order
+
+                - service: auth
+                  repo: https://github.com/tqnhu4/argocd-auth-service
+                #- service: product
+                #  repo: https://github.com/tqnhu4/argocd-product-service
+                #- service: order
+                #  repo: https://github.com/tqnhu4/argocd-order-service                
+
+          - list:
+              elements:
+                - env: dev
+                #- env: staging
+                #- env: prod
+
+  template:
+    metadata:
+      name: '{{service}}-{{env}}'
+
+    spec:
+      project: default
+
+      source:
+        repoURL: '{{repo}}'
+        targetRevision: HEAD
+        path: helm-charts/{{service}}
+        helm:
+          valueFiles:
+            - ../../environments/{{env}}/values/{{service}}-values.yaml
+
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{env}}'
+
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
