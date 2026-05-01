@@ -16,10 +16,10 @@ spec:
 
                 - service: auth
                   repo: https://github.com/tqnhu4/argocd-auth-service
-                #- service: product
-                #  repo: https://github.com/tqnhu4/argocd-product-service
-                #- service: order
-                #  repo: https://github.com/tqnhu4/argocd-order-service                
+                - service: product
+                  repo: https://github.com/tqnhu4/argocd-product-service
+                - service: order
+                  repo: https://github.com/tqnhu4/argocd-order-service                
 
           - list:
               elements:
