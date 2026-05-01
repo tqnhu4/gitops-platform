@@ -1,5 +1,6 @@
 image:
   repository: nhutq/auth-service
-  tag: 8c3970359502c9f27f9376066efd763cf61b9d10
+  tag: latest
+  
   #pullPolicy: IfNotPresent
   imagePullPolicy: Always
