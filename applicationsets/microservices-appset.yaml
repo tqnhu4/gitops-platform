@@ -24,8 +24,8 @@ spec:
           - list:
               elements:
                 - env: dev
-                #- env: staging
-                #- env: prod
+                - env: staging
+                - env: prod
 
   template:
     metadata:
