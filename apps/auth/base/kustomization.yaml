@@ -1,0 +1,8 @@
+resources:
+  - deployment.yaml
+  - rollout.yaml
+  - service.yaml
+
+commonLabels:
+  app: auth
+  managed-by: argocd

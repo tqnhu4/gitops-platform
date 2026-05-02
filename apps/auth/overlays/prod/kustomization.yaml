@@ -1,0 +1,18 @@
+resources:
+  - ../../base
+
+namespace: auth-prod
+nameSuffix: -prod
+
+images:
+  - name: nhutq/auth-service
+    newTag: latest
+
+replicas:
+  - name: auth
+    count: 3
+
+configMapGenerator:
+  - name: auth-config
+    literals:
+      - ENV=prod

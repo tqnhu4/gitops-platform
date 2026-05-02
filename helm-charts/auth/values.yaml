@@ -1,6 +1,0 @@
-image:
-  repository: nhutq/auth-service
-  tag: ""
-
-service:
-  port: 3000

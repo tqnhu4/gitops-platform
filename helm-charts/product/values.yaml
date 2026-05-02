@@ -1,6 +1,0 @@
-image:
-  repository: nhutq/product-service
-  tag: latest
-
-service:
-  port: 3000

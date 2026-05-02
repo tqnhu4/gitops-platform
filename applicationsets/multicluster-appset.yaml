@@ -1,0 +1,43 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: multicluster-microservices
+  namespace: argocd
+spec:
+  generators:
+    - matrix:
+        generators:
+          # 🔥 Clusters
+          - clusters: {}
+          # 🔥 Services
+          - list:
+              elements:
+                - service: auth
+                #- service: product
+                #- service: order
+          # 🔥 Environments
+          - list:
+              elements:
+                - env: dev
+                #- env: staging
+                #- env: prod
+
+  template:
+    metadata:
+      name: '{{service}}-{{env}}-{{name}}'
+    spec:
+      project: default
+
+      source:
+        repoURL: https://github.com/tqnhu4/gitops-platform.git
+        targetRevision: HEAD
+        path: apps/{{service}}/overlays/{{env}}
+
+      destination:
+        server: '{{server}}'
+        namespace: '{{service}}-{{env}}'
+
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
