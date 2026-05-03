@@ -4,7 +4,7 @@ namespace: auth-dev
 nameSuffix: -dev
 images:
   - name: nhutq/auth-service
-    newTag: d1857a25083fa6242378c019265a891f72287824
+    newTag: fe375c4ab7589711ddfe5f3e57610c13b6e85ef7
 replicas:
   - name: auth
     count: 1
