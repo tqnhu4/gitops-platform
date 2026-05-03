@@ -9,18 +9,22 @@ spec:
         generators:
           # 🔥 Clusters
           - clusters: {}
-          # 🔥 Services
+          
+          # 🔥 Service + Env combined
           - list:
               elements:
                 - service: auth
-                #- service: product
-                #- service: order
-          # 🔥 Environments
-          - list:
-              elements:
-                - env: dev
-                #- env: staging
-                #- env: prod
+                  env: dev
+                # - service: product
+                #   env: dev
+                # - service: order
+                #   env: dev
+
+                # mở rộng sau:
+                # - service: auth
+                #   env: staging
+                # - service: auth
+                #   env: prod
 
   template:
     metadata:
