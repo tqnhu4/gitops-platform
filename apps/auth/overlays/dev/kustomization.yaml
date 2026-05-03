@@ -1,17 +1,13 @@
 resources:
   - ../../base
-
 namespace: auth-dev
 nameSuffix: -dev
-
 images:
   - name: nhutq/auth-service
-    newTag: latest
-
+    newTag: fe375c4ab7589711ddfe5f3e57610c13b6e85ef7
 replicas:
   - name: auth
     count: 1
-
 configMapGenerator:
   - name: auth-config
     literals:
