@@ -8,7 +8,10 @@ spec:
     - matrix:
         generators:
           # 🔥 Clusters
-          - clusters: {}
+          - clusters:
+              selector:
+                matchLabels:
+                  env: '{{env}}'
           
           # 🔥 Service + Env combined
           - list:
