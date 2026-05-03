@@ -1,17 +1,13 @@
 resources:
   - ../../base
-
 namespace: auth-staging
 nameSuffix: -staging
-
 images:
   - name: nhutq/auth-service
-    newTag: latest
-
+    newTag: 745c21f2b6a3fe68fb7d665897125f0f7115eb51
 replicas:
   - name: auth
     count: 2
-
 configMapGenerator:
   - name: auth-config
     literals:
