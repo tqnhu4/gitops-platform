@@ -20,9 +20,9 @@ spec:
                 # - service: order
                 #   env: dev
 
-                # mở rộng sau:
-                #- service: auth
-                #  env: staging
+                
+                - service: auth
+                  env: staging
                 #- service: auth
                 #   env: prod
 
