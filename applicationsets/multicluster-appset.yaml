@@ -22,7 +22,7 @@ spec:
 
                 # mở rộng sau:
                 - service: auth
-                   env: staging
+                  env: staging
                 #- service: auth
                 #   env: prod
 
