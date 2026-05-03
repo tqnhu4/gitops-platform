@@ -21,9 +21,9 @@ spec:
                 #   env: dev
 
                 # mở rộng sau:
-                # - service: auth
-                #   env: staging
-                # - service: auth
+                - service: auth
+                   env: staging
+                #- service: auth
                 #   env: prod
 
   template:
