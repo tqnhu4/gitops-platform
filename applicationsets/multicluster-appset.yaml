@@ -14,7 +14,7 @@ spec:
               elements:
                 - service: auth
                   env: dev
-                  #clusterName: in-cluster
+                  clusterName: in-cluster
                 # - service: product
                 #   env: dev
                 # - service: order
@@ -23,7 +23,7 @@ spec:
                 
                 - service: auth
                   env: staging
-                  #clusterName: k3d-staging-cluster
+                  clusterName: k3d-staging-cluster
                 #- service: auth
                 #   env: prod
 
