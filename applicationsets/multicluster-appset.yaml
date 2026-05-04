@@ -9,7 +9,7 @@ spec:
         generators:
           # 🔥 Clusters
           # 🔥 Filter cluster theo env
-          - clusters:
+          - clusters: 
               selector:
                 matchLabels:
                   env: '{{env}}'
