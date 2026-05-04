@@ -44,7 +44,7 @@ spec:
 
       destination:
         name: '{{cluster}}'
-        server: '{{server}}'
+        #server: '{{server}}'
         namespace: '{{service}}-{{env}}'
 
       syncPolicy:
