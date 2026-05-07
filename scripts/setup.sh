@@ -3,9 +3,14 @@
 set -e
 
 echo "🚀 Create k3d cluster..."
+#k3d cluster create gitops \
+#  -p "8080:80@loadbalancer" \
+#  -p "8443:443@loadbalancer"
+
 k3d cluster create gitops \
   -p "8080:80@loadbalancer" \
-  -p "8443:443@loadbalancer"
+  -p "8443:443@loadbalancer" \
+  --k3s-arg "--disable=traefik@server:0"  
 
 echo "📦 Install ArgoCD..."
 kubectl create namespace argocd || true
