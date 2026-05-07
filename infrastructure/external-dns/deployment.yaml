@@ -8,17 +8,31 @@ spec:
   selector:
     matchLabels:
       app: external-dns
+
   template:
     metadata:
       labels:
         app: external-dns
+
     spec:
       containers:
         - name: external-dns
           image: registry.k8s.io/external-dns/external-dns:v0.14.0
+
           args:
             - --source=service
             - --source=ingress
             - --provider=inmemory
             - --registry=txt
             - --txt-owner-id=local
+            - --request-timeout=5m
+            - --policy=upsert-only
+
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+
+            limits:
+              cpu: 300m
+              memory: 256Mi
