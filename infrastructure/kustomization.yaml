@@ -1,5 +1,5 @@
 resources:
   - ingress
   - cert-manager
-  - external-dns
+  #- external-dns
   - monitoring

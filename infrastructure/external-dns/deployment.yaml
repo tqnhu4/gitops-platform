@@ -1,10 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
+
 metadata:
   name: external-dns
   namespace: external-dns
+
 spec:
   replicas: 1
+
   selector:
     matchLabels:
       app: external-dns
@@ -15,18 +18,27 @@ spec:
         app: external-dns
 
     spec:
+      serviceAccountName: external-dns
+
       containers:
         - name: external-dns
           image: registry.k8s.io/external-dns/external-dns:v0.14.0
 
           args:
-            - --source=service
+            # 🔥 ONLY ingress
             - --source=ingress
+
+            # 🔥 ONLY demo namespace
+            - --namespace=demo
+
             - --provider=inmemory
+
             - --registry=txt
             - --txt-owner-id=local
-            - --request-timeout=5m
+
             - --policy=upsert-only
+
+            - --request-timeout=10m
 
           resources:
             requests:
