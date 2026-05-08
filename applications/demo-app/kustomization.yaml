@@ -3,6 +3,7 @@ resources:
   - deployment.yaml
   - service.yaml
   - ingress.yaml
+
 images:
-  - name: nhutq/auth-service
-    newTag: d9ec0c198f5290e20f0fddd197db5800a4bbeab2
+  - name: nhutq/gitops-demo
+    newTag: latest
