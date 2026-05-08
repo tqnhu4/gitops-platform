@@ -5,20 +5,14 @@ metadata:
   namespace: demo
 spec:
   replicas: 2
-
   selector:
     matchLabels:
       app: demo
-
   template:
     metadata:
       labels:
         app: demo
-
     spec:
       containers:
         - name: demo
-          image: nhutq/gitops-demo:latest
-
-          ports:
-            - containerPort: 80
+          image: nginx
