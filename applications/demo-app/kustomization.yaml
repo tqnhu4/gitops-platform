@@ -5,4 +5,4 @@ resources:
   - ingress.yaml
 images:
   - name: nhutq/gitops-demo
-    newTag: ccdbb86ab5dad5489204312e9b72ffe1f6601bd6
+    newTag: d9ec0c198f5290e20f0fddd197db5800a4bbeab2
