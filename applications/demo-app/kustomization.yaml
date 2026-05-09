@@ -3,6 +3,7 @@ resources:
   - deployment.yaml
   - service.yaml
   - ingress.yaml
+
 images:
   - name: nhutq/gitops-demo
-    newTag: ccdbb86ab5dad5489204312e9b72ffe1f6601bd6
+    newTag: latest
